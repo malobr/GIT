@@ -33,6 +33,9 @@ git remote add origin https://github.com/malobr/teste.git
 
 Enviar commits para o repositório remoto
 
+git push
+git puch -u origin <Nome Branch>
+git push -u origin main
 git push -u origin main --force
 
 ​
@@ -49,6 +52,14 @@ git pull
 Trocar o usuário que já está autenticado 
 
 git config credential.username "username"
+
+
+Criar e\ou mudar Branches
+
+git checkout -b <NomeBranch>//Criar nova branch
+git checkout <NomeSuaBranch>//Mudar de branch
+git push origin <NomeSuaBranch>// Dar um push na branch especifica, modificando apenas ela e nao a principal ou outras...
+git push -u origin <NomeSuaBranch>// Primeiro push semple com (-u)...
 
 ​
 Atalhos
