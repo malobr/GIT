@@ -1,83 +1,100 @@
-Comandos:
+# Guia de Comandos Git
 
-Configurações iniciais (inserir o seu nome e e-mail)
+## Configurações Iniciais
 
-git config --global user.name "John Doe" 
-git config --global user.email "johndoe@example.com"
-​
+Configurar seu nome de usuário e email:
 
-Criar um repositório local
+```bash
+git config --global user.name "Seu Nome"
+git config --global user.email "seuemail@example.com"
+```
 
+## Operações Básicas
+
+### Criar um Repositório Local
+
+```bash
 git init
-​
+```
 
-Verificar status do repositório
+### Verificar o Status do Repositório
 
+```bash
 git status
+```
 
-​
-Adicionar todos os arquivos para um novo commit
+### Adicionar Todos os Arquivos para um Novo Commit
 
+```bash
 git add .
-​
+```
 
-Adicionar um novo commit
+### Realizar um Novo Commit
 
+```bash
 git commit -m "Descrição do commit"
+```
 
-​
-Configurar repositório remoto (endereço do seu repositório)
+## Trabalhando com Repositórios Remotos
 
-git remote add origin https://github.com/malobr/teste.git
-​
+### Configurar um Repositório Remoto
 
-Enviar commits para o repositório remoto
+```bash
+git remote add origin https://github.com/seunome/seurepositorio.git
+```
 
+### Enviar Commits para o Repositório Remoto
+
+```bash
 git push
-git puch -u origin <Nome Branch>
+git push -u origin <NomeBranch>
 git push -u origin main
 git push -u origin main --force
+```
 
-​
-Clonar repositório remoto
+### Clonar um Repositório Remoto
 
-git clone https://github.com/malobr/teste.git
+```bash
+git clone https://github.com/seunome/seurepositorio.git
+```
 
-​
-Requisitar novas atualizações do repositório
+### Requisitar Novas Atualizações do Repositório
 
+```bash
 git pull
+```
 
-​
-Trocar o usuário que já está autenticado 
+## Gerenciando Branches
 
-git config credential.username "username"
+### Criar e Mudar de Branches
 
+```bash
+git checkout -b <NomeBranch> # Criar nova branch
+git checkout <NomeSuaBranch> # Mudar de branch
+git push origin <NomeSuaBranch> # Dar um push na branch específica
+git push -u origin <NomeSuaBranch> # Primeiro push com (-u)
+```
 
-Criar e\ou mudar Branches
+## Atalhos e Configurações
 
-git checkout -b <NomeBranch>//Criar nova branch
-git checkout <NomeSuaBranch>//Mudar de branch
-git push origin <NomeSuaBranch>// Dar um push na branch especifica, modificando apenas ela e nao a principal ou outras...
-git push -u origin <NomeSuaBranch>// Primeiro push semple com (-u)...
+### Configurar Atalhos e Editor
 
-​
-Atalhos
-Executar os dois comandos abaixo para abrir o arquivo de configurações do git no visual studio code
-
+```bash
 git config --global core.editor code --wait
 git config --global --edit
+```
 
-​
-Alterar o arquivo aberto para configurar os atalhos ao CLI do git
+### Configurar Atalhos no CLI do Git
 
+```bash
 [core]
-	editor = code --wait
+    editor = code --wait
 [user]
-	email = seuemail@gmail.com
-	name = nome 
+    email = seuemail@gmail.com
+    name = Seu Nome 
 [alias]
-  s = !clear & git status -s
-	c = !clear & git add . & git commit -m
-	l = !clear & git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(yellow)%cr'
-	amend = !clear & git add . && git commit --amend --no-edit
+    s = !clear & git status -s
+    c = !clear & git add . & git commit -m
+    l = !clear & git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(yellow)%cr'
+    amend = !clear & git add . && git commit --amend --no-edit
+```
